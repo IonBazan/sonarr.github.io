@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="partials/head.html" />
+  <title>Sonarr - Smart PVR for Usenet and Torrents</title>
+  <meta name="description" content="Sonarr is an internet PVR for Usenet and Torrents. It monitors RSS feeds for new episodes of your favorite shows and grabs, sorts and renames them." />
+</head>
+<body>
+  <include src="partials/header.html" />
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1>Sonarr is an internet PVR for Usenet and Torrents.</h1>
+          <p class="lead">It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.</p>
+          <div class="actions">
+            <a href="#download" class="btn btn-primary"><icon name="download" /> Download</a>
+            <a href="https://github.com/Sonarr/Sonarr" class="btn"><icon name="si:github" /> GitHub</a>
+          </div>
+        </div>
+        <img class="hero-shot" src="/img/slider/seriesdetails.png" alt="Sonarr series details page" width="651" height="300" />
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <h2>Features</h2>
+        <div class="features">
+          <article class="card feature feature-wide">
+            <div class="feature-text">
+              <h3>Calendar</h3>
+              <p>See all your upcoming episodes in one convenient location.</p>
+            </div>
+            <img src="/img/features/calendar.png" alt="" width="400" height="200" loading="lazy" />
+          </article>
+          <article class="card feature">
+            <div class="feature-text">
+              <h3>Manual Search</h3>
+              <p>Find all the releases, choose the one you want and send it right to your download client.</p>
+            </div>
+            <img src="/img/features/manualsearch.png" alt="" width="400" height="200" loading="lazy" />
+          </article>
+          <article class="card feature">
+            <div class="feature-text">
+              <h3>Automatic Failed Download Handling</h3>
+              <p>Password protected releases, missing repair blocks or virtually any other reason? Sonarr will automatically block the release and try another one until it finds one that works.</p>
+            </div>
+            <img src="/img/features/blocklist.png" alt="" width="400" height="200" loading="lazy" />
+          </article>
+          <article class="card feature feature-wide">
+            <div class="feature-text">
+              <h3>Quality Profiles</h3>
+              <p>Fully customizable quality profiles, and notifications for the services you already use.</p>
+            </div>
+            <img src="/img/slider/qualityprofile.png" alt="" width="569" height="270" loading="lazy" />
+          </article>
+          <article class="card feature feature-wide">
+            <div class="feature-text">
+              <h3>Multiple Series Views</h3>
+              <p>Browse your series as posters, an overview or a table.</p>
+            </div>
+            <img src="/img/slider/posters.png" alt="" width="466" height="260" loading="lazy" />
+          </article>
+          <article class="card feature">
+            <div class="feature-text">
+              <h3>Built-in Updater</h3>
+              <p>See what's new without leaving the comfort of the app.</p>
+            </div>
+            <img src="/img/slider/updates2.png" alt="" width="622" height="180" loading="lazy" />
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="section section-alt">
+      <div class="container">
+        <h2>Download</h2>
+        <div class="tabs" id="downloads">
+          <div class="tab-list" role="tablist">
+            <button role="tab" aria-controls="downloads-windows" aria-selected="true"><icon name="windows" /> Windows</button>
+            <button role="tab" aria-controls="downloads-linux"><icon name="si:linux" /> Linux</button>
+            <button role="tab" aria-controls="downloads-macos"><icon name="si:apple" /> macOS</button>
+            <button role="tab" aria-controls="downloads-nas"><icon name="hard-drive" /> NAS</button>
+            <button role="tab" aria-controls="downloads-docker"><icon name="si:docker" /> Docker</button>
+            <button role="tab" aria-controls="downloads-other"><icon name="ellipsis" /> Others</button>
+          </div>
+          <div role="tabpanel" id="downloads-windows" class="panel"><include src="partials/downloads/windows.html" /></div>
+          <div role="tabpanel" id="downloads-linux" class="panel" hidden><include src="partials/downloads/linux.html" /></div>
+          <div role="tabpanel" id="downloads-macos" class="panel" hidden><include src="partials/downloads/macos.html" /></div>
+          <div role="tabpanel" id="downloads-nas" class="panel" hidden><include src="partials/downloads/nas.html" /></div>
+          <div role="tabpanel" id="downloads-docker" class="panel" hidden><include src="partials/downloads/docker.html" /></div>
+          <div role="tabpanel" id="downloads-other" class="panel" hidden>
+            <div class="alert alert-info"><icon name="info" /><div>Please contact us if you wish to port Sonarr to any other platform than the ones already listed.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="support" class="section">
+      <div class="container">
+        <h2>Support</h2>
+        <div class="support">
+          <a class="card support-item" href="https://forums.sonarr.tv">
+            <icon name="users" />
+            <h3>Forums</h3>
+            <p>Talk to Sonarr developers and other users, we are here to help.</p>
+          </a>
+          <a class="card support-item" href="https://wiki.sonarr.tv">
+            <icon name="book-open" />
+            <h3>Wiki</h3>
+            <p>Check out the FAQ, API documentation and other guides.</p>
+          </a>
+          <a class="card support-item" href="https://discord.sonarr.tv">
+            <icon name="si:discord" />
+            <h3>Discord</h3>
+            <p>Join our Discord server for a chat.</p>
+          </a>
+          <a class="card support-item" href="https://web.libera.chat/?channels=#sonarr">
+            <icon name="message-circle" />
+            <h3>IRC Channel</h3>
+            <p>Join <code>#sonarr</code> on irc.libera.chat for a chat.</p>
+          </a>
+          <a class="card support-item" href="https://github.com/Sonarr/Sonarr/issues">
+            <icon name="si:github" />
+            <h3>GitHub Issues</h3>
+            <p>Track bugs and features for the things that matter to you.</p>
+          </a>
+          <a class="card support-item" href="https://www.reddit.com/r/sonarr">
+            <icon name="si:reddit" />
+            <h3>Subreddit</h3>
+            <p>Discuss Sonarr and talk to other users.</p>
+          </a>
+          <a class="card support-item" href="https://twitter.com/sonarrtv">
+            <icon name="si:x" />
+            <h3>X (Twitter)</h3>
+            <p>News, updates and anything else that might come up.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <include src="partials/footer.html" />
+</body>
+</html>

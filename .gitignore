@@ -29,3 +29,5 @@ _ReSharper*/
 
 node_modules/*
 .idea/workspace.xml
+
+dist/

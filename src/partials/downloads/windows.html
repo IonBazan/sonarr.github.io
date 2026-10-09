@@ -1,0 +1,24 @@
+<p class="maintainer">Package maintainers: <a href="https://github.com/sonarr/sonarr">Team Sonarr</a></p>
+<div class="intro">
+  <p>Sonarr is supported natively on Windows. Sonarr can be installed as Windows Service or System Tray Application.</p>
+  <p>A Windows Service runs even when the user is not logged in, but special care must be taken since Windows Services cannot access network drives (<code>X:\</code> mapped drives or <code>\\server\share</code> UNC paths) without special configuration steps. Additionally the Windows Service runs under the <b>Local Service</b> account, by default this account does not have permissions to access your user's home directory unless permissions have been assigned manually. This is particularly relevant when using download clients that are configured to download to your home directory.</p>
+  <p>It's therefore advisable to install Sonarr as a System Tray Application if the user can remain logged in. The option to do so is provided during the installer.</p>
+  <div class="alert alert-warning"><icon name="triangle-alert" /><div>Sonarr is supported on Windows 8.1 and Server 2012 or later. Pre-release or earlier versions of Windows are not supported.</div></div>
+  <div class="alert alert-info"><icon name="info" /><div><h4>Updating Sonarr v3 to v4</h4><p>Sonarr will automatically convert an existing Sonarr installation. It's advisable to make a backup of the v3 data first.</p></div></div>
+</div>
+<ol class="steps">
+  <li>
+    <h4>Install Sonarr</h4>
+    <p>Download the Windows Installer and run it.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://services.sonarr.tv/v1/download/main/latest?version=4&amp;os=windows&amp;arch=x64&amp;installer=true"><icon name="download" /> Windows (x64) Installer</a>
+      <a class="btn" href="https://services.sonarr.tv/v1/download/main/latest?version=4&amp;os=windows&amp;arch=x86&amp;installer=true"><icon name="download" /> Windows (x86) Installer</a>
+    </div>
+  </li>
+  <include src="view.html" />
+</ol>
+<details class="alternatives">
+  <summary>Alternatives for advanced users</summary>
+  <h4>Manual Install</h4>
+  <p>It is possible to install Sonarr manually using the <a href="https://services.sonarr.tv/v1/download/main/latest?version=4&amp;os=windows&amp;arch=x64">Windows x64</a> or <a href="https://services.sonarr.tv/v1/download/main/latest?version=4&amp;os=windows&amp;arch=x86">Windows x86</a> .zip downloads. However in that case you must manually deal with dependencies, installation and permissions.</p>
+</details>
