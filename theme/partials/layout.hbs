@@ -8,6 +8,11 @@
   {{#unless page}}<meta name="description" content="{{@root.description}}" />{{/unless}}
   <link rel="icon" href="{{@root.favicon}}" />
   <style>:root { --accent: {{@root.accent}}; }</style>
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem('theme') ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch {}
+  </script>
   <script type="module" src="/@theme/main.js"></script>
 </head>
 <body>

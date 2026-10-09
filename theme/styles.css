@@ -1,42 +1,32 @@
 :root {
-  --accent-text: color-mix(in oklab, var(--accent) 62%, #000);
+  color-scheme: light dark;
+  --accent-text: light-dark(color-mix(in oklab, var(--accent) 62%, #000), color-mix(in oklab, var(--accent) 85%, #fff));
   --on-accent: color-mix(in oklab, var(--accent) 15%, #000);
-  --bg: #ffffff;
-  --bg-alt: #f6f7f9;
-  --surface: #ffffff;
-  --surface-2: #f1f3f6;
-  --shadow: 0 1px 2px rgb(15 20 25 / 0.04), 0 6px 20px rgb(15 20 25 / 0.05);
-  --text: #1d2126;
-  --muted: #646b75;
-  --border: #e2e5e9;
-  --code-bg: #f3f4f6;
-  --info: #0b7ea6;
-  --info-bg: #eef8fc;
-  --warning: #96600a;
-  --warning-bg: #fdf6e7;
+  --bg: light-dark(#ffffff, #17191c);
+  --bg-alt: light-dark(#f6f7f9, #1d2024);
+  --surface: light-dark(#ffffff, #1f2226);
+  --surface-2: light-dark(#f1f3f6, #272a2f);
+  --shadow: 0 1px 2px light-dark(rgb(15 20 25 / 0.04), transparent), 0 6px 20px light-dark(rgb(15 20 25 / 0.05), rgb(0 0 0 / 0.25));
+  --text: light-dark(#1d2126, #e4e6e9);
+  --muted: light-dark(#646b75, #9aa1aa);
+  --border: light-dark(#e2e5e9, #2e3237);
+  --code-bg: light-dark(#f3f4f6, #121417);
+  --info: light-dark(#0b7ea6, #6fd3f7);
+  --info-bg: light-dark(#eef8fc, #182a32);
+  --warning: light-dark(#96600a, #eebd62);
+  --warning-bg: light-dark(#fdf6e7, #2d2617);
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-family: Lato, system-ui, sans-serif;
   font-size: 17px;
   line-height: 1.6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --accent-text: color-mix(in oklab, var(--accent) 85%, #fff);
-    --bg: #17191c;
-    --bg-alt: #1d2024;
-    --surface: #1f2226;
-    --surface-2: #272a2f;
-    --shadow: 0 6px 20px rgb(0 0 0 / 0.25);
-    --text: #e4e6e9;
-    --muted: #9aa1aa;
-    --border: #2e3237;
-    --code-bg: #121417;
-    --info: #6fd3f7;
-    --info-bg: #182a32;
-    --warning: #eebd62;
-    --warning-bg: #2d2617;
-  }
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
 }
 
 *,
@@ -226,6 +216,22 @@ pre code {
 .icon-link .icon {
   width: 1.25rem;
   height: 1.25rem;
+}
+
+.theme-toggle {
+  font: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.theme-toggle .icon:last-child,
+:root[data-theme='dark'] .theme-toggle .icon:first-child {
+  display: none;
+}
+
+:root[data-theme='dark'] .theme-toggle .icon:last-child {
+  display: block;
 }
 
 @media (max-width: 640px) {

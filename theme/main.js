@@ -6,6 +6,28 @@ if (location.hash.toLowerCase() === '#donate') {
   location.replace('/donate');
 }
 
+function storedTheme() {
+  try {
+    return localStorage.getItem('theme');
+  } catch {
+    return null;
+  }
+}
+
+document.querySelector('.theme-toggle')?.addEventListener('click', () => {
+  const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = theme;
+  try {
+    localStorage.setItem('theme', theme);
+  } catch {}
+});
+
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+  if (!storedTheme()) {
+    document.documentElement.dataset.theme = e.matches ? 'dark' : 'light';
+  }
+});
+
 for (const el of document.querySelectorAll('[data-year]')) {
   el.textContent = new Date().getFullYear();
 }
