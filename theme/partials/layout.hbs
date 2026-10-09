@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>{{#if page}}{{@root.name}} - {{page}}{{else}}{{@root.title}}{{/if}}</title>
+  {{#unless page}}<meta name="description" content="{{@root.description}}" />{{/unless}}
+  <link rel="icon" href="{{@root.favicon}}" />
+  <style>:root { --accent: {{@root.accent}}; }</style>
+  <script type="module" src="/@theme/main.js"></script>
+</head>
+<body>
+  {{> header}}
+
+  {{> @partial-block}}
+
+  {{> footer}}
+</body>
+</html>

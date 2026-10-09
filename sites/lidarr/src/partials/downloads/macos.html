@@ -1,0 +1,29 @@
+<div class="intro">
+  <p>The easiest way to install Lidarr on macOS is to use the App archive with the steps described below.</p>
+  {{#> alert heading="Lidarr v0.8 migration"}}<p>The Lidarr v1 package will attempt to automatically migrate an existing Lidarr v0.8 database. Lidarr used the user's home directory <code>~/.config/Lidarr</code> to store the application data which v1 also uses.</p>{{/alert}}
+</div>
+<ol class="steps">
+  <li>
+    <h4>Download App package</h4>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://lidarr.servarr.com/v1/update/master/updatefile?runtime=netcore&amp;os=osx&amp;arch=arm64&amp;installer=true">{{icon "download"}} macOS App (Apple Silicon)</a>
+      <a class="btn" href="https://lidarr.servarr.com/v1/update/master/updatefile?runtime=netcore&amp;os=osx&amp;arch=x64&amp;installer=true">{{icon "download"}} macOS App (Intel)</a>
+    </div>
+  </li>
+  <li>
+    <h4>Install App</h4>
+    <p>Open the archive and drag the Lidarr icon to your Applications folder.</p>
+    {{#> alert warning=true}}Lidarr v1 is not compatible with macOS versions older than 10.13 (High Sierra) due to .NET incompatibilities.{{/alert}}
+  </li>
+  <li>
+    <h4>Start Lidarr</h4>
+    <p>Open Lidarr.app in your Applications folder.</p>
+  </li>
+  {{> view-step}}
+</ol>
+<details class="alternatives">
+  <summary>Alternatives for advanced users</summary>
+  <h4>Manual Install</h4>
+  <p>It is possible to install Lidarr manually using the <a href="https://lidarr.servarr.com/v1/update/master/updatefile?runtime=netcore&amp;os=osx&amp;arch=arm64">Apple Silicon</a> or <a href="https://lidarr.servarr.com/v1/update/master/updatefile?runtime=netcore&amp;os=osx&amp;arch=x64">Intel</a> .tar.gz downloads. However in that case you must manually deal with dependencies, installation and permissions.</p>
+  {{> docker-alternative}}
+</details>

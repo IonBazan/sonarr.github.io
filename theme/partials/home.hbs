@@ -1,0 +1,56 @@
+{{#> layout}}
+<main>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <h1>{{hero.title}}</h1>
+        <p class="lead">{{hero.lead}}</p>
+        <div class="actions">
+          <a href="#download" class="btn btn-primary">{{icon "download"}} Download</a>
+          <a href="{{github}}" class="btn">{{icon "si:github"}} GitHub</a>
+        </div>
+      </div>
+      {{image hero.image class="hero-shot" alt=hero.alt}}
+    </div>
+  </section>
+
+  <section id="features" class="section">
+    <div class="container">
+      <h2>Features</h2>
+      <div class="features">
+        {{#each features}}
+        <article class="card feature{{#if wide}} feature-wide{{/if}}">
+          <div class="feature-text">
+            <h3>{{title}}</h3>
+            <p>{{text}}</p>
+          </div>
+          {{image image loading="lazy"}}
+        </article>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="download" class="section">
+    <div class="container">
+      <h2>Download</h2>
+      {{> tabs tabs=downloads domId="downloads"}}
+    </div>
+  </section>
+
+  <section id="support" class="section">
+    <div class="container">
+      <h2>Support</h2>
+      <div class="support">
+        {{#each support}}
+        <a class="card support-item" href="{{href}}">
+          {{icon this.icon}}
+          <h3>{{title}}</h3>
+          <p>{{{text}}}</p>
+        </a>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+</main>
+{{/layout}}

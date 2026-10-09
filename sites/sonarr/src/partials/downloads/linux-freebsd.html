@@ -1,0 +1,21 @@
+<p class="maintainer">Package maintainers: <a href="https://cgit.freebsd.org/ports/tree/net-p2p/sonarr">mvanbaak</a></p>
+<div class="intro">
+  <p>Sonarr can be installed using the FreeBSD Sonarr <a href="https://cgit.freebsd.org/ports/tree/net-p2p/sonarr">Port</a>.</p>
+</div>
+<ol class="steps">
+  <li>
+    <h4>Install Sonarr</h4>
+    <pre><code>pkg install sonarr</code></pre>
+  </li>
+  <li>
+    <h4>Start Sonarr</h4>
+    <pre><code>sysrc sonarr_enable=YES
+service sonarr start</code></pre>
+  </li>
+  {{> view-step}}
+</ol>
+<details class="alternatives">
+  <summary>Alternatives for advanced users</summary>
+  {{> downloads/linux-manual}}
+  {{> docker-alternative}}
+</details>

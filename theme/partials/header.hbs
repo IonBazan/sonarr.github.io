@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="brand"><img src="{{@root.logo}}" alt="" width="28" height="28" />{{@root.name}}</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/#support">Support</a>
+      <a href="/donate">Donate</a>
+      {{#if @root.api}}<a href="/docs/api/">API</a>{{/if}}
+    </nav>
+    <div class="header-actions">
+      <a href="{{@root.github}}" class="icon-link" aria-label="GitHub">{{icon "si:github"}}</a>
+      <a href="/#download" class="btn btn-primary btn-sm">Download</a>
+    </div>
+  </div>
+</header>

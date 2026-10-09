@@ -1,0 +1,12 @@
+<footer class="site-footer">
+  <div class="container site-footer-inner">
+    <p>&copy; <span data-year></span> {{@root.name}}. All rights reserved.</p>
+    <nav aria-label="Footer">
+      {{#if @root.api}}<a href="/docs/api/">API Docs</a>{{/if}}
+      {{#each @root.footerLinks}}<a href="{{href}}">{{label}}</a>{{/each}}
+      <a href="/donate">Donate</a>
+      <a href="{{@root.github}}">GitHub</a>
+      {{#with @root.donate.referral}}<a href="{{href}}">{{icon this.icon}} {{footer}}</a>{{/with}}
+    </nav>
+  </div>
+</footer>

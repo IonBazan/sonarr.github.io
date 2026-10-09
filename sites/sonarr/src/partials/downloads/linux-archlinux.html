@@ -1,0 +1,23 @@
+<p class="maintainer">Package maintainers: <a href="https://aur.archlinux.org/packages/sonarr-bin/">fryfrog, txtsd</a></p>
+<div class="intro">
+  <p>The Arch Linux User Repository offers the <a href="https://aur.archlinux.org/packages/sonarr-bin/">sonarr-bin</a> package that can be installed manually or using your favorite <a href="https://wiki.archlinux.org/index.php/AUR_helpers">AUR helper</a>.</p>
+  {{#> alert heading="Updating Sonarr v3 to v4"}}<p>Sonarr will convert an existing Sonarr database if found during startup. Of course, it is always advisable to make a backup first.</p>{{/alert}}
+</div>
+<ol class="steps">
+  <li>
+    <h4>Install Sonarr</h4>
+    <p>An AUR helper can install Sonarr and its dependencies easily, or follow the <a href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">AUR Installing Packages</a> wiki for manual installation. For example, to use <a href="https://aur.archlinux.org/packages/paru">paru</a> to install the Sonarr package:</p>
+    <pre><code>paru -S sonarr-bin</code></pre>
+  </li>
+  <li>
+    <h4>Start Sonarr</h4>
+    <pre><code>sudo systemctl daemon-reload
+sudo systemctl enable --now sonarr</code></pre>
+  </li>
+  {{> view-step}}
+</ol>
+<details class="alternatives">
+  <summary>Alternatives for advanced users</summary>
+  {{> downloads/linux-manual}}
+  {{> docker-alternative}}
+</details>

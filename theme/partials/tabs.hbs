@@ -1,0 +1,12 @@
+<div class="tabs{{#if pills}} tabs-pills{{/if}}"{{#if domId}} id="{{domId}}"{{/if}}>
+  <div class="tab-list" role="tablist">
+    {{#each tabs}}
+    <button role="tab" aria-controls="{{panelId}}" aria-selected="{{selected}}">{{#if this.icon}}{{icon this.icon}} {{/if}}{{label}}</button>
+    {{/each}}
+  </div>
+  {{#each tabs}}
+  <div role="tabpanel" id="{{panelId}}" class="panel"{{#if aliases}} data-aliases="{{aliases}}"{{/if}}{{#unless selected}} hidden{{/unless}}>
+    {{#if tabs}}{{> tabs tabs=tabs pills=true}}{{else}}{{> (lookup . 'content') @root}}{{/if}}
+  </div>
+  {{/each}}
+</div>

@@ -1,0 +1,23 @@
+<div class="intro">
+  <p>The Arch Linux User Repository offers a <a href="https://aur.archlinux.org/packages/lidarr/">lidarr</a> package that can be installed manually or using your favorite <a href="https://wiki.archlinux.org/index.php/AUR_helpers">AUR helper</a>.</p>
+  {{#> alert heading="Lidarr v0.8 migration"}}<p>The existing lidarr AUR packages already used <code>/var/lib/lidarr</code> to store the Lidarr database. Lidarr v1 will convert that directory automatically on startup.</p>{{/alert}}
+</div>
+<ol class="steps">
+  <li>
+    <h4>Install Lidarr</h4>
+    <p>An AUR helper can install Lidarr and its dependencies easily, or follow the <a href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">AUR Installing Packages</a> wiki for manual installation. For example, to use <a href="https://github.com/Jguer/yay">yay</a> to install the lidarr package:</p>
+    <pre><code>yay -S lidarr-bin</code></pre>
+  </li>
+  <li>
+    <h4>Start Lidarr</h4>
+    <pre><code>sudo systemctl daemon-reload
+sudo systemctl enable --now lidarr</code></pre>
+  </li>
+  {{> view-step}}
+</ol>
+<details class="alternatives">
+  <summary>Alternatives for advanced users</summary>
+  <h4>Manual Install</h4>
+<p>It is possible to install Lidarr manually from upstream using the <a href="https://lidarr.servarr.com/v1/update/master/updatefile?runtime=netcore&amp;os=linux&amp;arch=x64">.tar.gz download</a>. However in that case you must manually deal with dependencies, installation and permissions.</p>
+{{> docker-alternative}}
+</details>

@@ -1,0 +1,20 @@
+<div class="intro">
+  <p>Please see our Servarr Wiki for <a href="https://wiki.servarr.com/lidarr/installation#windows">installation instructions</a>.</p>
+  {{#> alert heading="Lidarr v0.8 migration"}}<p>Lidarr v1 will convert any existing v0.8 directory automatically on startup.</p>{{/alert}}
+</div>
+<ol class="steps">
+  <li>
+    <h4>Install Lidarr</h4>
+    <p>Download the Windows Installer and run it.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://lidarr.servarr.com/v1/update/master/updatefile?runtime=netcore&amp;os=windows&amp;arch=x64&amp;installer=true">{{icon "download"}} Windows (x64) Installer</a>
+      <a class="btn" href="https://lidarr.servarr.com/v1/update/master/updatefile?runtime=netcore&amp;os=windows&amp;arch=x86&amp;installer=true">{{icon "download"}} Windows (x86) Installer</a>
+    </div>
+  </li>
+  {{> view-step}}
+</ol>
+<details class="alternatives">
+  <summary>Alternatives for advanced users</summary>
+  <h4>Manual Install</h4>
+  <p>It is possible to install Lidarr manually using the x64 <a href="https://lidarr.servarr.com/v1/update/master/updatefile?runtime=netcore&amp;os=windows&amp;arch=x64">.zip download</a>. However in that case you must manually deal with dependencies, installation and permissions.</p>
+</details>

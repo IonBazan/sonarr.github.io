@@ -1,0 +1,34 @@
+<div class="intro">
+  <p>The easiest way to install Radarr on macOS is to use the App archive with the steps described below.</p>
+  {{#> alert heading="Radarr migration"}}<p>The Radarr package will attempt to automatically migrate an existing Radarr database. Radarr v0.2 used the user's home directory <code>~/.config/Radarr</code> to store the application data which v4 also uses.</p>{{/alert}}
+</div>
+<ol class="steps">
+  <li>
+    <h4>Download App package</h4>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://radarr.servarr.com/v1/update/master/updatefile?runtime=netcore&amp;os=osx&amp;arch=arm64&amp;installer=true">{{icon "download"}} macOS App (Apple Silicon)</a>
+      <a class="btn" href="https://radarr.servarr.com/v1/update/master/updatefile?runtime=netcore&amp;os=osx&amp;arch=x64&amp;installer=true">{{icon "download"}} macOS App (Intel)</a>
+    </div>
+  </li>
+  <li>
+    <h4>Install App</h4>
+    <p>Open the archive and drag the Radarr icon to your Applications folder.</p>
+    {{#> alert warning=true}}Radarr v5 is not compatible with macOS versions older than 10.15 (Catalina) due to .NET incompatibilities.{{/alert}}
+  </li>
+  <li>
+    <h4>Self-sign Radarr</h4>
+    <p>Open Terminal and run:</p>
+    <pre><code>codesign --force --deep -s - /Applications/Radarr.app &amp;&amp; xattr -rd com.apple.quarantine /Applications/Radarr.app</code></pre>
+  </li>
+  <li>
+    <h4>Start Radarr</h4>
+    <p>Open Radarr.app in your Applications folder.</p>
+  </li>
+  {{> view-step}}
+</ol>
+<details class="alternatives">
+  <summary>Alternatives for advanced users</summary>
+  <h4>Manual Install</h4>
+  <p>It is possible to install Radarr manually using the <a href="https://radarr.servarr.com/v1/update/master/updatefile?runtime=netcore&amp;os=osx&amp;arch=arm64">Apple Silicon</a> or <a href="https://radarr.servarr.com/v1/update/master/updatefile?runtime=netcore&amp;os=osx&amp;arch=x64">Intel</a> .tar.gz downloads. However in that case you must manually deal with dependencies, installation and permissions.</p>
+  {{> docker-alternative}}
+</details>

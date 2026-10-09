@@ -1,0 +1,26 @@
+<p class="maintainer">Package maintainers: <a href="https://github.com/sonarr/sonarr">Team Sonarr</a></p>
+<div class="intro">
+  <p>The installation process described here uses an installation shell script. The script will configure the required systemd unit to auto-start Sonarr. It'll deploy the binaries in <code>/opt/Sonarr</code> and the configuration data will be stored in <code>/var/lib/sonarr</code>.</p>
+  {{#> alert heading="Updating Sonarr v3 to v4"}}<p>The Sonarr v4 package overwrites v3's systemd unit if present. It's advisable to make a backup of the v3 data first and uninstall the previous <code>sonarr</code> package.</p>{{/alert}}
+</div>
+<ol class="steps">
+  <li>
+    <h4>Install Sonarr</h4>
+    <p>Run one of the below commands as <b>root</b>.</p>
+    {{#> alert warning=true}}During the installation, you will be asked which user and group Sonarr must run as. It's important to choose these correctly to avoid permission issues with your media files. We suggest you keep at least the group name identical between your download client(s) and Sonarr. If you need to correct these after installation, please re-run the installation script.{{/alert}}
+    <h5>curl</h5>
+    <pre><code>curl -o install-sonarr.sh https://raw.githubusercontent.com/Sonarr/Sonarr/develop/distribution/debian/install.sh
+sudo bash install-sonarr.sh</code></pre>
+    <h5>wget</h5>
+    <pre><code>wget -qO install-sonarr.sh https://raw.githubusercontent.com/Sonarr/Sonarr/develop/distribution/debian/install.sh
+sudo bash install-sonarr.sh</code></pre>
+  </li>
+  {{> view-step}}
+</ol>
+<details class="alternatives">
+  <summary>Alternatives for advanced users</summary>
+  <h4>Manual Install</h4>
+  <p>It is possible to install Sonarr manually using a <code>.tar.gz</code> download. However in that case you must manually deal with dependencies, installation and permissions. You will need to download the correct package for your system.</p>
+  {{> downloads/linux-tarball}}
+  {{> docker-alternative}}
+</details>

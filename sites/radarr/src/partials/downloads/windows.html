@@ -1,0 +1,20 @@
+<div class="intro">
+  <p>Please see our Servarr Wiki for <a href="https://wiki.servarr.com/radarr/installation#windows">installation instructions</a>.</p>
+  {{#> alert heading="Radarr migration"}}<p>Radarr will convert any existing directory automatically on startup.</p>{{/alert}}
+</div>
+<ol class="steps">
+  <li>
+    <h4>Install Radarr</h4>
+    <p>Download the Windows Installer and run it.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://radarr.servarr.com/v1/update/master/updatefile?runtime=netcore&amp;os=windows&amp;arch=x64&amp;installer=true">{{icon "download"}} Windows (x64) Installer</a>
+      <a class="btn" href="https://radarr.servarr.com/v1/update/master/updatefile?runtime=netcore&amp;os=windows&amp;arch=x86&amp;installer=true">{{icon "download"}} Windows (x86) Installer</a>
+    </div>
+  </li>
+  {{> view-step}}
+</ol>
+<details class="alternatives">
+  <summary>Alternatives for advanced users</summary>
+  <h4>Manual Install</h4>
+  <p>It is possible to install Radarr manually using the x64 <a href="https://radarr.servarr.com/v1/update/master/updatefile?runtime=netcore&amp;os=windows&amp;arch=x64">.zip download</a>. However in that case you must manually deal with dependencies, installation and permissions.</p>
+</details>

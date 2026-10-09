@@ -1,0 +1,30 @@
+{{#> layout page="Donate"}}
+<main class="section">
+  <div class="container narrow">
+    <div class="card donate">
+      {{icon "heart"}}
+      <h1>Awww, we love you too!</h1>
+      <p class="lead">Your donations will help support {{name}}, we promise to put it to good use.</p>
+      <div class="donate-actions">
+        {{#each donate.links}}
+        <a href="{{href}}" class="btn{{#if @first}} btn-primary{{/if}}">{{icon this.icon}} {{label}}</a>
+        {{/each}}
+        {{#if donate.bitcoin}}
+        <button type="button" class="btn" commandfor="bitcoin" command="show-modal">{{icon "si:bitcoin"}} Donate Bitcoin</button>
+        {{/if}}
+      </div>
+      {{#with donate.referral}}
+      <p class="donate-referral">Or use our <a href="{{href}}">{{icon this.icon}} {{label}}</a></p>
+      {{/with}}
+    </div>
+  </div>
+</main>
+
+{{#with donate.bitcoin}}
+<dialog id="bitcoin" class="card" closedby="any">
+  {{#if qr}}<a href="bitcoin:{{address}}?label={{@root.name}}">{{image qr alt="Bitcoin address QR code"}}</a>{{/if}}
+  <pre><code>{{address}}</code></pre>
+  <button type="button" class="btn" commandfor="bitcoin" command="close">Close</button>
+</dialog>
+{{/with}}
+{{/layout}}
